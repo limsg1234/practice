@@ -1,0 +1,71 @@
+소수찾기 - 1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환하는 함수, solution을 만들어 보세요.
+
+1) 시간초과 되어서 2번 또는 3번으로 수정.
+
+class Solution {
+  public int solution(int n) {
+      int answer = 0;
+      int check = 0;
+      for(int i = 2; i <= n; i++){
+          check = 0;
+          for (int j = 1; j <= i; j++){
+              if (i % j == 0)
+                  check++;
+          }
+          if (check == 2) 
+              answer++;
+
+      }
+
+      return answer;
+  }
+}
+
+2) 제곱근으로 범위를 제한.
+
+class Solution {
+  public int solution(int n) {
+      int answer = 0;
+
+      for(int i = 2; i <= n; i++){
+          boolean chk = true;
+          for (int j = 2; j * j <= i; j++){
+              if (i % j == 0){
+                  chk = false;
+                  break;
+              }
+          }
+          if (chk == true) 
+              answer++;
+
+      }
+
+      return answer;
+  }
+}
+
+3) 에라토스테네스의 체 사용 - 소수를 구하는 수학적 방법.
+
+class Solution {
+  public int solution(int n) {
+      int answer = 0;
+      int[] num = new int[n + 1];
+      for (int i = 2; i <= n; i++){
+          num[i] = i;
+      }
+      
+      for (int i = 2; i <= n; i++) {
+          if (num[i] == 0) continue;
+          for (int j = 2 * i; j <= n; j += i) {
+              num[j] = 0;
+          }
+      }
+      
+      for (int i = 0; i < num.length; i++){
+          if (num[i] != 0)
+              answer++;
+      }
+      
+      return answer;
+  }
+}
