@@ -20,3 +20,38 @@ class Solution {
       return answer;
   }
 }
+
+다시 다른 방법으로 풀어봄.
+
+class Solution {
+  public boolean solution(String s) {
+      boolean answer = true;
+ 
+     if (s.length() != 4 && s.length() != 6) 
+         return false;
+    for (int i = 0; i < s.length(); i++) {
+          char chk = s.charAt(i);
+            
+        if ('0' > chk || '9' < chk) 
+           return false;        
+      }
+
+      return answer;
+  }
+}
+
+다른 사람이 푼 것 중 참신한 것.
+
+class Solution {
+  public boolean solution(String s) {
+      if(s.length() == 4 || s.length() == 6){
+          try{
+              int x = Integer.parseInt(s);
+              return true;
+          } catch(NumberFormatException e){
+              return false;
+          }
+      }
+      else return false;
+  }
+}
