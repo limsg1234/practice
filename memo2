@@ -1,0 +1,52 @@
+### 자주 잊어버리는 것 정리
+
+1. 문자열 시작, 끝 글자 비교할 때 사용하는 메서드 : String 의 startsWith(), endsWith()
+
+1) startsWith(String) : String 타입을 인자로 받으며, 해당 String 객체가 인자로 전달된 String으로 시작한다면 true를 리턴하고 그렇지 않다면 false를 리턴. 
+
+  (예제)
+  String example = "Java programmers";
+
+  System.out.println(example.startsWith("J"));
+  System.out.println(example.startsWith("Jav"));
+  System.out.println(example.startsWith("Java p"));
+  System.out.println(example.startsWith("ava"));
+  
+  (결과)
+  true
+  true
+  true
+  false
+
+2) endsWith(String) :  String 타입을 인자로 받으며, 해당 String 객체가 인자로 전달된 String으로 끝난다면 true를 리턴하고 그렇지 않다면 false를 리턴.
+
+
+
+2. 특정 문자열의 인덱스를 찾는데 사용하는 메서드 : indexOf(), lastIndexOf() 
+
+1.1) indexOf(String) : 인자로 전달된 String의 index를 리턴. 원하는 String을 찾지 못하면 -1을 리턴.
+
+1.2) indexOf(String, int) : 처음 몇글자를 건너띄고 특정 문자열의 index를 리턴. int 타입의 인자가 탐색을 시작할 index를 의미.
+
+2) lastIndexOf(String), lastIndexOf(String, int) : 뒤에서부터 String을 찾는다.
+
+
+
+3. substring
+
+1) String.substring(start) : start 위치에서 끝까지 자르기
+
+2) String.substring(start, end) : start 위치에서 end 전까지 자르기
+  -> String.substring(3, 6) : 인덱스 3에서 5까지
+
+
+
+4. HashMap 에 key 가 있는지, value 가 있는지 체크하기 : containsKey(), containsValue()
+
+HashMap에 containsKey 메소드에 키값을 넘겨주면 해당 키값이 HashMap에 있을경우 true, 없을 경우 false.
+
+HashMap에 containsValue 메소드에 값을 넘겨주면 해당 값이 HashMap에 있을경우 true, 없을 경우 false.
+
+
+
+
